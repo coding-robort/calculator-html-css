@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Ui - Robort Gabriel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main class="grid-box">
+
+        <section class="left-col">
+
+            <div class="right-header-box">
+                <p>1234</p>
+            </div>
+            <div class="number-box">
+                <p class="btn">C</p>
+                <p class="btn">CE</p>
+                <p class="btn">+</p>
+                <p class="btn">AC</p>
+                <p class="btn">1</p>
+                <p class="btn">2</p>
+                <p class="btn">3</p>
+                <p class="btn">-</p>
+                <p class="btn">4</p>
+                <p class="btn">5</p>
+                <p class="btn">6</p>
+                <p class="btn">%</p>
+                <p class="btn">7</p>
+                <p class="btn">8</p>
+                <p class="btn">9</p>
+                <p class="btn">x</p>
+                <p class="btn">.</p>
+                <p class="btn">0</p>
+                <p class="btn">=</p>
+                <p class="btn" style="border-bottom-right-radius: 8px;">^</p>
+            </div>
+        </section>
+
+        <section class="right-col">
+
+            <section class="data-box">
+                <p class="head">
+                    History
+                </p>
+                <p class="data">2 + 2 = 4</p>
+                <p class="data">2 + 2 = 4</p>
+                <p class="data">2 * 42 = 44</p>
+                <p class="data">2 / 22 = 64</p>
+                <p class="data">2 + 2 = 4</p>
+                <!-- <p class="data">2 + 2 = 4</p> -->
+                <p class="data">76 % 23 = 9.4</p>
+                <p class="data">25 - 52 = 434</p>
+                <p class="data">2 + 2 = 4</p>
+                <p class="data">25 - 52 = 434</p>
+                <!-- <p class="data">2 + 2 = 4</p> -->
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script>
+        var btns = document.getElementsByClassName("btn");
+        // alert(btns.length);
+        for (var i = 0; i < btns.length; i++) {
+
+
+            // add click listerner to all the num btn
+            btns[i].addEventListener("click", function () {
+
+                var current = document.getElementsByClassName("selectedP");
+
+                // check and remove initial selection
+                if (current.length > 0) {
+                    current[0].className = current[0].className.replace("selectedP", "");
+                }
+
+                // select new item
+                this.className += " selectedP";
+            });
+        }
+    </script>
+</body>
+
+</html>
